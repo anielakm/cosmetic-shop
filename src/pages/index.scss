@@ -1,0 +1,404 @@
+body{
+    padding:0;
+    margin:0;
+    font-family: 'Playfair Display', serif;
+    background-color: #f6f6f6;
+  }
+  *, *::before, *::after{
+    box-sizing:border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  *:focus {
+      outline: none;
+  }
+
+.header{
+  
+  width:100%;
+  background-color:white;
+  margin:0;
+  padding:0;
+  
+  .header__content{
+    max-width:1200px;
+    width:80%;
+    padding: 10% 0;
+    margin: 0 auto 10%;
+    text-align: center;
+
+    @media(min-width:768px){
+      padding: 2% 0;
+      margin: 0 auto 5%;
+
+    }
+
+    .header__title{
+      padding:5% 5% 0 5%;
+      margin:0;
+      font-size:32px;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+
+      @media(min-width:768px){
+        font-size:62px;
+      }
+    }
+
+    .header__title--subtitle{
+      font-size:12px;
+      text-transform: lowercase;
+      padding:1% 5% 5% 5%;
+      letter-spacing: 1px;
+      font-family: 'lato';
+      font-weight: 200;
+      font-size:11px;
+
+      @media(min-width:768px){
+        font-size:11px;
+        letter-spacing: 3px;
+      }
+    }
+  }
+}
+
+.bar{
+
+  width:90%;
+  max-width:1200px;
+  margin: 5% auto;
+
+
+  @media(min-width:1024px){
+    margin: 2% auto;
+  }
+
+  .bar__container{
+
+    margin:1%;
+    background-color:white;
+    padding:2% 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+
+    .bar__filter{
+
+      padding: 4% 2%;
+      font-family: 'lato';
+      width:100%;
+      font-size:12px;
+      text-transform: lowercase;
+      text-align: center;
+
+      @media(min-width:768px){
+        width:50%;
+        text-align: left;
+        padding: 0 2%;
+      }
+
+      .bar__select{
+        padding:1% 5% 1% 1%;
+        margin-left:2%;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 0;
+        font-size:10px;
+        text-transform: lowercase;
+
+        
+      -webkit-appearance: none;
+       -moz-appearance: none;
+      appearance: none;      
+      background-image: url('../images/sort-down.png');   
+      background-position: 95%;
+      background-size: 10px;
+      background-repeat: no-repeat;
+
+      
+      }
+    }
+    .bar__card{
+      cursor: pointer;
+      padding: 4% 2%;
+      font-family: 'lato';
+      position:relative;
+      width:100%;
+      text-align: center;
+
+      @media(min-width:768px){
+        width:50%;
+        text-align: right;
+        padding: 0 2%;
+      }
+
+
+
+      .card{
+
+        text-align:left;
+        padding: 0 2%;
+        width:100%;
+        position:absolute;
+        top:100%; 
+        right:0;
+        display: block;
+        background-color: white;
+        z-index: 9;
+        padding-bottom:1%;
+        box-shadow: 2px 2px 3px rgba(0,0,0,.05);
+
+        @media(min-width:768px){
+          width: 120%;
+          align-items: center;
+          margin: 5% 0 2% -20%;
+         }
+
+
+      @media(min-width:1024px){
+        top:0; 
+        width:100%;
+       }
+        
+
+        .card__list{
+          list-style: none;
+          padding:0;
+
+          .card__empty{
+            text-align: center;
+          }
+
+          .card__item{
+            display: flex;
+            width:100%;
+            align-items: center;
+            margin: 2% 0;
+
+              .card__img{
+                width:30%;
+                height:15vh;
+
+                @media(min-width:768px){
+                  width:40%;
+                height:10vh;
+                }
+             
+              }
+              .card__title{
+                width:20%;
+                font-size:12px;
+                padding:2%;
+
+                
+              }
+
+              .card__ammount{
+
+                width:20%;
+                text-align: center;
+                font-size:10px;
+                margin:auto;
+
+                .card__ammountContainer{
+                  
+                  width:100%;
+                margin-top:5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                @media(min-width:768px){
+                  font-size:12px;
+                }
+
+                .card__ammountValue{
+                  width:60%;
+                  .card__input{
+                    width:70%;
+                    margin:1px 0 4px;
+                    border:1px solid rgba(0,0,0,0.2);
+                    text-align: center;
+          
+                    @media(min-width:768px){
+                      font-size:12px;
+                      width:30px;
+                    }
+                    
+                  }
+                }
+                .card__buttons{
+                  width:40%;
+                  
+                  .card__button{
+                    width:20px;
+                    height:20px;
+                    text-align: center;
+                    margin:2px;
+                    border: 1px solid black;
+                    background-color:black;
+                    color:white;
+                 
+                  }
+                }
+
+
+               
+              }
+            }
+
+              .card__price{
+                width:25%;
+                text-align: center;
+                font-size:12px;
+
+                @media(min-width:768px){
+                  font-size:12px;
+                }
+                
+
+                .bold{
+                  font-size:14px;
+                  font-weight: 700;
+
+                  @media(min-width:768px){
+                    font-size:18px;
+                  }
+                }
+
+                
+              }
+
+              .card__delete{
+                font-size:10px;
+                width:25px;
+                height:25px;
+                color:white;
+                background-color:black;
+                border-radius: 50px;
+                border: 1px solid black;
+              }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+  .list{
+      max-width:1200px;
+      width:90%;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+
+      @media(min-width:768px){
+        width:90%;
+      }
+      @media(min-width:1024px){
+        width:80%;
+      }
+
+      .list__loading{
+        text-align: center;
+      }
+
+
+  .product{
+
+    width:98%;
+    margin:4% 1%;
+    background-color:white;
+   box-shadow: 2px 2px 3px rgba(0,0,0,.025);
+
+   @media(min-width:768px){
+    width:48%;
+    margin:1%;
+   }
+
+   @media(min-width:1024px){
+    width:23%;
+   }
+
+    .product__img{
+        width:100%;
+        height:30vh;
+
+        @media(min-width:768px){
+          height:20vh;
+         }
+
+    }
+    .product__title{
+     padding:8% 5% 4%;
+     margin:0;
+     text-transform: capitalize;
+     font-size:18px;
+    }
+    .product__bottom{
+
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 4% 0;
+
+      .product__price{
+        padding:0 5% 5% 5%;
+        margin:0;
+        font-family: 'lato';
+        width:50%;
+        .bold{
+          font-weight:700;
+        }
+        
+      }
+
+      .product__add{
+        width:50%;
+        margin-right:5%;
+        text-align: right;
+        
+        button{
+        background-color:black;
+        color:white;
+        text-transform: uppercase;
+        font-size:10px;
+        font-weight:600;
+        letter-spacing: 1px;
+        padding:3% 5%;
+        border:1px solid black;
+        cursor: pointer;
+        transition: 0.7s all;
+
+        &:hover{
+          background-color: transparent;
+          color:black;
+        }
+        }
+      }
+
+    }
+
+}
+
+ 
+  }
+
+  .footer{
+    width:100%;
+    background-color:white;
+    margin:4% 0 0;
+    padding:0;
+    text-align: center;
+    .footer__title{
+      font-size:18px;
+      margin:0;
+      padding: 10% 0;
+
+      @media(min-width:768px){
+        font-size:28px;
+        padding: 5% 0;
+       }
+    }
+  }
