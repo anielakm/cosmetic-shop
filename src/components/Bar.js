@@ -23,9 +23,22 @@ const Bar = ({ handleSelect, card, handleAmmount, handleDelete, isCardOpen, hand
 
             </div>
         </div>
-        <p className="card__price">price: <br /><span className="bold">{(item.price * item.ammount).toFixed(2)}</span></p>
+        <p className="card__price">price: <br /><span className="bold">{(item.price * item.ammount).toFixed(2)}$</span></p>
         <button className="card__delete" onClick={() => handleDelete(item)}>X</button>
     </li>);
+
+    const cardSum = () => {
+
+        let sum = 0;
+
+        for (let i = 0; i < card.length; i++) {
+            console.log(card[i].price)
+            sum += card[i].price;
+        }
+
+        return sum;
+    }
+
 
     return (
 
@@ -47,8 +60,9 @@ const Bar = ({ handleSelect, card, handleAmmount, handleDelete, isCardOpen, hand
                     <div className="card" style={isCardOpen ? { display: 'block' } : { display: 'none' }}>
                         <ul className="card__list">
                             {card.length === 0 ? (<p className="card__empty">your cart is empty</p>) : cardItems}
-
                         </ul>
+                        <p className="card__sum">Total: <span className="bold">{(card.length !== 0) && cardSum().toFixed(2)} $</span></p>
+
                     </div>
                 </div>
 
